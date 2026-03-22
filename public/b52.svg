@@ -1,0 +1,133 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .code-text { font-family: 'Menlo', 'Consolas', 'Monaco', monospace; font-size: 11px; fill: #e2e8f0; }
+    .line-num { font-family: 'Menlo', 'Consolas', 'Monaco', monospace; font-size: 11px; fill: #475569; text-anchor: end; }
+    .keyword { fill: #c084fc; font-weight: bold; } /* Purple */
+    .type { fill: #f59e0b; } /* Orange/Yellow for types */
+    .function { fill: #38bdf8; } /* Blue */
+    .variable { fill: #e2e8f0; } /* White/Slate */
+    .number { fill: #fca5a5; } /* Red/Pink */
+    .comment { fill: #64748b; font-style: italic; }
+    .cursor { animation: blink 1s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  </style>
+
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="600" height="340" rx="12" fill="url(#bg-gradient)" />
+  
+  <circle cx="20" cy="20" r="5" fill="#ef4444" />
+  <circle cx="40" cy="20" r="5" fill="#f59e0b" />
+  <circle cx="60" cy="20" r="5" fill="#22c55e" />
+  
+  <text x="300" y="24" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="12">BinarySearch.java</text>
+  
+  <rect x="0" y="45" width="600" height="1" fill="#334155" />
+
+  <g transform="translate(45, 75)">
+    <text x="-15" y="0" class="line-num">1</text>
+    <text x="-15" y="18" class="line-num">2</text>
+    <text x="-15" y="36" class="line-num">3</text>
+    <text x="-15" y="54" class="line-num">4</text>
+    <text x="-15" y="72" class="line-num">5</text>
+    <text x="-15" y="90" class="line-num">6</text>
+    <text x="-15" y="108" class="line-num">7</text>
+    <text x="-15" y="126" class="line-num">8</text>
+    <text x="-15" y="144" class="line-num">9</text>
+    <text x="-15" y="162" class="line-num">10</text>
+    <text x="-15" y="180" class="line-num">11</text>
+
+    <text x="0" y="0" class="code-text">
+      <tspan class="keyword">public</tspan> <tspan class="type">int</tspan> <tspan class="function">search</tspan>(<tspan class="type">int</tspan>[] <tspan class="variable">arr</tspan>, <tspan class="type">int</tspan> <tspan class="variable">target</tspan>) {
+    </text>
+    
+    <text x="0" y="18" class="code-text" dx="15">
+      <tspan class="type">int</tspan> left = <tspan class="number">0</tspan>;
+    </text>
+    
+    <text x="0" y="36" class="code-text" dx="15">
+      <tspan class="type">int</tspan> right = <tspan class="variable">arr</tspan>.length - <tspan class="number">1</tspan>;
+    </text>
+
+    <text x="0" y="54" class="code-text" dx="15">
+      <tspan class="keyword">while</tspan> (left &lt;= right) {
+    </text>
+
+    <text x="0" y="72" class="code-text" dx="30">
+      <tspan class="type">int</tspan> mid = left + (right - left) / <tspan class="number">2</tspan>;
+    </text>
+
+    <text x="0" y="90" class="code-text" dx="30">
+      <tspan class="keyword">if</tspan> (<tspan class="variable">arr</tspan>[mid] == <tspan class="variable">target</tspan>) <tspan class="keyword">return</tspan> mid;
+    </text>
+
+    <text x="0" y="108" class="code-text" dx="30">
+      <tspan class="keyword">if</tspan> (<tspan class="variable">arr</tspan>[mid] &lt; <tspan class="variable">target</tspan>)
+    </text>
+    
+    <text x="0" y="126" class="code-text" dx="45">
+       left = mid + <tspan class="number">1</tspan>;
+    </text>
+
+    <text x="0" y="144" class="code-text" dx="30">
+      <tspan class="keyword">else</tspan> right = mid - <tspan class="number">1</tspan>;
+    </text>
+
+    <text x="0" y="162" class="code-text" dx="15">
+      }
+    </text>
+    
+    <text x="0" y="180" class="code-text" dx="15">
+      <tspan class="keyword">return</tspan> -<tspan class="number">1</tspan>;
+    </text>
+    
+    <text x="0" y="198" class="code-text">}</text>
+    
+    <rect x="8" y="190" width="2" height="14" fill="#38bdf8" class="cursor" />
+  </g>
+
+  <g transform="translate(340, 70)">
+    <rect width="240" height="200" rx="8" fill="white" fill-opacity="0.05" stroke="#475569" stroke-width="1" />
+    
+    <text x="20" y="30" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="12">Visualizer</text>
+    <circle cx="215" cy="25" r="4" fill="#22c55e" />
+
+    <g transform="translate(20, 60)">
+       <rect x="0" y="0" width="35" height="35" rx="4" fill="#1e293b" stroke="#475569" />
+       <text x="17.5" y="22" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="12">10</text>
+       
+       <rect x="40" y="0" width="35" height="35" rx="4" fill="#1e293b" stroke="#475569" />
+       <text x="57.5" y="22" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="12">24</text>
+       
+       <rect x="80" y="0" width="35" height="35" rx="4" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2" />
+       <text x="97.5" y="22" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-weight="bold" font-size="12">42</text>
+       
+       <rect x="120" y="0" width="35" height="35" rx="4" fill="#1e293b" stroke="#475569" />
+       <text x="137.5" y="22" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="12">56</text>
+       
+       <rect x="160" y="0" width="35" height="35" rx="4" fill="#1e293b" stroke="#475569" />
+       <text x="177.5" y="22" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="12">89</text>
+
+       <text x="97.5" y="-10" text-anchor="middle" fill="#38bdf8" font-family="sans-serif" font-size="10">mid</text>
+       <path d="M97.5 -5 L97.5 -2" stroke="#38bdf8" stroke-width="1" />
+    </g>
+
+    <g transform="translate(20, 130)">
+        <rect width="90" height="24" rx="12" fill="#2e1065" stroke="#7c3aed" stroke-width="0.5" />
+        <text x="45" y="16" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="10">Time: O(log n)</text>
+        
+        <rect x="100" width="90" height="24" rx="12" fill="#064e3b" stroke="#059669" stroke-width="0.5" />
+        <text x="145" y="16" text-anchor="middle" fill="#6ee7b7" font-family="sans-serif" font-size="10">Space: O(1)</text>
+    </g>
+    
+    <text x="20" y="180" fill="#94a3b8" font-family="sans-serif" font-size="10">target = 42 found at index 2</text>
+  </g>
+</svg>
