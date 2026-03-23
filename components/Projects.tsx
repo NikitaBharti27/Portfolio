@@ -6,16 +6,8 @@ import { Section } from "@/components/ui/Section";
 import { projects } from "@/data";
 import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 
-const CATEGORIES = ["All", "Full Stack", "Frontend", "Backend", "Open Source"];
-
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-
-  const filteredProjects = projects.filter((project) => {
-    if (activeCategory === "All") return true;
-    return project.category === activeCategory;
-  });
 
   return (
     <Section id="projects" className="py-24 relative">
@@ -40,27 +32,10 @@ export default function Projects() {
           </motion.p>
         </div>
 
-        {/* Categories Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border backdrop-blur-md
-                ${activeCategory === category 
-                  ? "bg-purple-500/20 border-purple-500 text-white" 
-                  : "bg-white/5 border-white/10 text-gray-400 hover:text-white hover:border-white/20"}
-              `}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <AnimatePresence>
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}

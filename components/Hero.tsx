@@ -98,7 +98,7 @@ export default function Hero() {
                 <span>View Projects</span>
                 <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="/resume.pdf" target="_blank" className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 font-medium text-white backdrop-blur hover:bg-white/10 transition-colors">
+               <a href="/resume.pdf" download="Nikita_Bharti_Resume.pdf" target="_blank" className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 font-medium text-white backdrop-blur hover:bg-white/10 transition-colors">
                 <FaDownload className="mr-2" /> Resume
               </a>
               <div className="flex items-center gap-4 ml-0 md:ml-4">

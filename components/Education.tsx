@@ -19,7 +19,7 @@ const EDUCATION_DATA = [
     id: 2,
     degree: "Intermediate (12th Grade)",
     institution: "Kendriya Vidyalaya, Hakimpet, Secunderabad",
-    year: "Apr 2021 - Mar 2023",
+    year: "Apr 2022 - Mar 2023",
     grade: "Percentage: 81.8%",
     icon: <FaSchool className="text-xl text-blue-400" />,
     description: "Completed higher secondary education in Science stream."
@@ -40,7 +40,7 @@ export default function Education() {
     <Section id="education" className="py-24 relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,7 +48,7 @@ export default function Education() {
           >
             Education
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,10 +61,10 @@ export default function Education() {
 
         <div className="max-w-3xl mx-auto relative">
           <div className="absolute left-6 md:left-12 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-500/50 via-blue-500/50 to-transparent"></div>
-          
+
           <div className="space-y-12">
             {EDUCATION_DATA.map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={item.id}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +92,7 @@ export default function Education() {
                       {item.year}
                     </span>
                   </div>
-                  
+
                   <div className="mb-4">
                     <h4 className="text-lg font-medium text-gray-300">{item.institution}</h4>
                     <p className="inline-block mt-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">

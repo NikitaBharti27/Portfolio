@@ -15,7 +15,8 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitMessage("");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     formData.append("access_key", "ad527fd1-5df8-447d-a6d3-46601414e090");
     formData.append("subject", "New Contact Form Submission from Portfolio");
     formData.append("from_name", "Portfolio Notification");
@@ -34,16 +35,16 @@ export default function Contact() {
       });
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok && data.success) {
         setSubmitMessage("Message sent successfully!");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         console.log("Error", data);
         setSubmitMessage(data.message || "Failed to send message. Please try again later.");
       }
     } catch (error) {
       console.log("Error", error);
-      setSubmitMessage("An error occurred. Please check your connection.");
+      setSubmitMessage("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }

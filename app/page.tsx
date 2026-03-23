@@ -8,14 +8,15 @@ import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Training from "@/components/Training";
+import Certificates from "@/components/Certificates";
 
 // We will redefine navItems inline to match the new sections exactly
 const APP_NAV_ITEMS = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Skills", link: "#skills" },
-
   { name: "Education", link: "#education" },
+  { name: "Certificates", link: "#certificates" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -30,6 +31,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <Education />
+        <Certificates />
         <Training />
 
         <Contact />

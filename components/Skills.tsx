@@ -7,7 +7,7 @@ import {
   SiJavascript, SiTypescript, SiCplusplus, SiC,
   SiHtml5, SiCss3, SiTailwindcss, SiReact, SiNextdotjs, SiRedux,
   SiNodedotjs, SiExpress, SiMongodb, SiJsonwebtokens, SiCloudinary,
-  SiGithub, SiGit, SiNetlify, SiRender, SiPostman, SiGoogle
+  SiGithub, SiGit, SiNetlify, SiRender, SiPostman, SiGoogle, SiVercel, SiSocketdotio
 } from "react-icons/si";
 import { FaJava, FaLightbulb, FaTasks, FaClock } from "react-icons/fa";
 
@@ -39,6 +39,7 @@ const skillCategories = [
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" />, level: 85 },
       { name: "REST APIs", icon: <SiNodedotjs className="text-gray-400" />, level: 90 },
       { name: "JWT", icon: <SiJsonwebtokens className="text-pink-500" />, level: 85 },
+      { name: "Socket.io", icon: <SiSocketdotio className="text-white" />, level: 80 },
     ]
   },
   {
@@ -49,14 +50,7 @@ const skillCategories = [
       { name: "Netlify", icon: <SiNetlify className="text-teal-400" />, level: 85 },
       { name: "Render", icon: <SiRender className="text-black" />, level: 85 },
       { name: "Postman", icon: <SiPostman className="text-orange-500" />, level: 90 },
-    ]
-  },
-  {
-    title: "Soft Skills",
-    skills: [
-      { name: "Project Management", icon: <FaTasks className="text-blue-400" />, level: 85 },
-      { name: "Teamwork", icon: <FaLightbulb className="text-yellow-400" />, level: 90 },
-      { name: "Adaptive Learner", icon: <FaClock className="text-green-400" />, level: 95 },
+      { name: "Vercel", icon: <SiVercel className="text-white" />, level: 85 },
     ]
   }
 ];
