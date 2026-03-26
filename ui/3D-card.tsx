@@ -105,7 +105,8 @@ type CardItemProps = {
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: any;
+  [key: string]: unknown;
+
 };
 
 export const CardItem = React.forwardRef<HTMLDivElement, CardItemProps>(

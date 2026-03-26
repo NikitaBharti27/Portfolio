@@ -19,7 +19,7 @@ const CERTIFICATES_DATA = [
   },
   {
     id: 2,
-    name: "MERN Stack",
+    name: "Full-Stack Development",
     issuer: "Cipher Schools",
     date: "Jul 2025",
     description: "Intensive training in MongoDB, Express.js, React, and Node.js for full-stack development.",
@@ -28,9 +28,9 @@ const CERTIFICATES_DATA = [
     icon: <FaCertificate className="text-purple-400 text-3xl" />
   },
   {
-    id: 5,
-    name: "Hackathon Participant",
-    issuer: "Developer Community",
+    id: 3,
+    name: "Build A Thon Hackathon",
+    issuer: "Board Infinity",
     date: "Sep 2024",
     description: "Collaborated in intensive coding challenges to develop innovative tech solutions.",
     image: "/hackathon.png",
@@ -39,16 +39,16 @@ const CERTIFICATES_DATA = [
   },
   {
     id: 4,
-    name: "Introduction to Public Speaking",
-    issuer: "MOOC",
+    name: "Unrevealing Basic Python towards ML/AI",
+    issuer: "CSE Pathshala",
     date: "Aug 2024",
-    description: "Techniques for effective communication, presentation, and audience engagement.",
+    description: "Completed a 25-hour course on Python fundamentals and basic ML/AI concepts.",
     image: "/mooc.png",
     link: "#",
     icon: <FaAward className="text-green-400 text-3xl" />
   },
   {
-    id: 3,
+    id: 5,
     name: "Responsive Web Design",
     issuer: "freeCodeCamp",
     date: "Nov 2023",
@@ -104,8 +104,9 @@ export default function Certificates() {
                   <Image 
                     src={cert.image} 
                     alt={cert.name}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
                     className="transition-transform duration-700 group-hover:scale-110 filter brightness-90 group-hover:brightness-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -175,8 +176,9 @@ export default function Certificates() {
                 <Image 
                   src={selectedCert.image} 
                   alt={selectedCert.name}
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  sizes="100vw"
+                  style={{ objectFit: 'contain' }}
                   className="rounded-xl shadow-2xl"
                 />
               </div>
