@@ -96,7 +96,7 @@ export const CardBody = ({
 };
 
 type CardItemProps = {
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   children?: React.ReactNode;
   className?: string;
   translateX?: number | string;
@@ -105,7 +105,7 @@ type CardItemProps = {
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: unknown;
+  [key: string]: any;
 
 };
 
@@ -144,9 +144,9 @@ export const CardItem = React.forwardRef<HTMLDivElement, CardItemProps>(
       }
     }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
-    const Tag = as;
+    const Tag = as as any;
     return (
-      <Tag ref={setRefs} className={cn("w-fit transition duration-200 ease-linear", className)} {...rest}>
+      <Tag ref={setRefs} className={cn("w-fit transition duration-200 ease-linear", className as any)} {...rest}>
         {children}
       </Tag>
     );
