@@ -79,7 +79,7 @@ export const projects = [
     des: "Designed and developed a modular MERN-based order management system with JWT authentication and end-to-end menu/order CRUD, improving API performance by 35% through optimized routing and MongoDB indexing.",
     img: "/bond&bites.png",
     iconLists: ["/re.svg", "/tail.svg", "/node.svg", "/mongo.svg"],
-    link: "https://github.com/NikitaBharti27",
+    link: "https://bondandbites.vercel.app/",
     githubLink: "https://github.com/NikitaBharti27",
     category: "Full Stack",
     challenge: "Developing a responsive frontend cutting state re-renders by 30% and enhancing UI smoothness.",
