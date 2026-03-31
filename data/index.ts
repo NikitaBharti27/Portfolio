@@ -76,7 +76,7 @@ export const projects = [
   {
     id: 1,
     title: "Bond&Bites - Restaurant Order Management",
-    des: "Designed and developed a modular MERN-based order management system with JWT authentication and end-to-end menu/order CRUD, improving API performance by 35% through optimized routing and MongoDB indexing.",
+    des: "Bonds & Bites is a full-stack restaurant platform that seamlessly connects customers and admins through real-time ordering, reservations, and efficient management features.",
     img: "/bond&bites.png",
     iconLists: ["/re.svg", "/tail.svg", "/node.svg", "/mongo.svg"],
     link: "https://bondandbites.vercel.app/",
