@@ -7,7 +7,7 @@ const RecentProject = () => {
         <section className='py-20' id="projects">
             <h2 className='text-center text-[2.5rem] leading-10 font-bold'>
                 A small selection of {' '}
-                <span className='text-purple'>
+                <span className='text-primary'>
                     recent project
                 </span>
             </h2>

@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Training from "@/components/Training";
 import Certificates from "@/components/Certificates";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // We will redefine navItems inline to match the new sections exactly
 const APP_NAV_ITEMS = [
@@ -22,7 +23,7 @@ const APP_NAV_ITEMS = [
 
 export default function Home() {
   return (
-    <main className="relative bg-[#0B0F19] flex justify-center overflow-x-hidden items-center flex-col mx-auto selection:bg-purple-500/30">
+    <main className="relative bg-background flex justify-center overflow-x-hidden items-center flex-col mx-auto selection:bg-orange-500/30">
       <FloatingNav navItems={APP_NAV_ITEMS} />
       
       <div className="w-full">
@@ -36,6 +37,7 @@ export default function Home() {
 
         <Contact />
         <Footer />
+        <ThemeToggle />
       </div>
     </main>
   );

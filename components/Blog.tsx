@@ -45,16 +45,16 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="heading-2 text-white mb-4"
+              className="heading-2 text-foreground mb-4"
             >
-              Writing & <span className="text-purple-400">Case Studies</span>
+              Writing & <span className="text-primary">Case Studies</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-gray-400 leading-relaxed"
+              className="text-muted-foreground leading-relaxed"
             >
               Thoughts on software engineering, system design, and the occasional debugging rabbit hole.
             </motion.p>
@@ -64,10 +64,10 @@ export default function Blog() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             href="#" 
-            className="group flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            className="group flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-all active:scale-95"
           >
             View all posts 
-            <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform text-purple-400" />
+            <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform text-primary" />
           </motion.a>
         </div>
 
@@ -83,30 +83,30 @@ export default function Blog() {
               className="group glass-panel flex flex-col h-full bg-white/[0.02] hover:bg-white/[0.05] transition-all p-8 relative overflow-hidden"
             >
               {/* Subtle hover gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs font-semibold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full">
+                <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
                   {post.category}
                 </span>
-                <span className="text-xs text-gray-500 font-medium">
+                <span className="text-xs text-muted-foreground font-medium">
                   {post.readTime}
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-4 leading-snug group-hover:text-purple-300 transition-colors">
+              <h3 className="text-xl font-bold text-foreground mb-4 leading-snug group-hover:text-primary transition-colors">
                 {post.title}
               </h3>
               
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-8 flex-grow">
                 {post.preview}
               </p>
 
-              <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
-                <span className="text-sm font-medium text-gray-500 group-hover:text-gray-300 transition-colors">
+              <div className="mt-auto flex items-center justify-between pt-4 border-t border-border/50">
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
                   {post.date}
                 </span>
-                <span className="text-purple-400 group-hover:translate-x-1 transition-transform">
+                <span className="text-primary group-hover:translate-x-1 transition-transform">
                   <FaArrowRight size={14} />
                 </span>
               </div>

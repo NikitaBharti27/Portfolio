@@ -8,7 +8,7 @@ import { div } from "motion/react-client";
 export default function Approach() {
   return (
     <section className="w-full py-20 " id="approach">
-        <h1 className="heading">My <span className="text-purple">Approach</span></h1>
+        <h2 className="heading-2 text-center mb-10">My <span className="text-primary">Approach</span></h2>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center   gap-4 ">
         <Card 
         title="Planning & Strategy"
@@ -65,12 +65,12 @@ const Card = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => setHovered(!hovered)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/20  max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl "
+      className="border border-border/20 group/canvas-card flex items-center justify-center dark:border-white/10 max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl transition-all hover:border-primary/30"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-foreground/50 transition-colors group-hover/canvas-card:text-primary" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-foreground/50 transition-colors group-hover/canvas-card:text-primary" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-foreground/50 transition-colors group-hover/canvas-card:text-primary" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-foreground/50 transition-colors group-hover/canvas-card:text-primary" />
 
       <AnimatePresence>
         {hovered && (
@@ -97,7 +97,7 @@ const Card = ({
           {icon}
         </div>
         <h2
-          className="dark:text-white  opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center text-3xl"
+          className="text-foreground opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4 font-bold group-hover/canvas-card:text-foreground group-hover/canvas-card:-translate-y-2 transition duration-200 text-center text-3xl"
           style={{
             opacity: hovered ? 1 : undefined,
             transform: hovered ? "translateY(-0.5rem)" : undefined,
@@ -106,9 +106,8 @@ const Card = ({
           {title}
         </h2>
         <h2
-          className="text-sm dark:text-white opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center"
+          className="text-sm text-foreground/70 opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4 font-medium group-hover/canvas-card:-translate-y-2 transition duration-200 text-center px-4"
           style={{
-            color: "#e4ecff",
             opacity: hovered ? 1 : undefined,
             transform: hovered ? "translateY(-0.5rem)" : undefined,
           }}
@@ -123,9 +122,9 @@ const Card = ({
 const AceternityIcon = ({order} : {order?: string}) => {
   return (
     <div>
-        <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 font-bold px-5 py-1 text-white backdrop-blur-3xl text-2xl">
+        <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all active:scale-95">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FBBF24_0%,#EA580C_50%,#FBBF24_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-background font-bold px-5 py-1 text-foreground backdrop-blur-3xl text-2xl transition-colors">
                 {order}
             </span>
         </button>

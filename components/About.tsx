@@ -9,14 +9,14 @@ const aboutData = [
   {
     id: "intro",
     title: "Who I Am",
-    icon: <FaUser className="text-blue-400 text-xl" />,
+    icon: <FaUser className="text-orange-400 text-xl" />,
     description: "I am a Full-Stack MERN Developer passionate about creating seamless, high-performance web applications. I bridge the gap between complex backend logic and beautiful, intuitive user interfaces.",
     delay: 0.1,
   },
   {
     id: "journey",
     title: "How I Started",
-    icon: <FaRoute className="text-purple-400 text-xl" />,
+    icon: <FaRoute className="text-violet-400 text-xl" />,
     description: "My journey began with a deep curiosity for how the web works, leading me to pursue a B.Tech in CSE. Through constant building, learning, and open-source contributions, I honed my skills in scalable architecture.",
     delay: 0.3,
   },
@@ -33,7 +33,7 @@ export default function About() {
   return (
     <Section id="about" className="py-24 relative overflow-hidden">
       {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-24">
@@ -41,17 +41,17 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="heading-2 text-white mb-4"
+            className="heading-2 text-foreground mb-4"
           >
             About Me
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
-          >
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-muted-foreground max-w-2xl mx-auto"
+            >
             A glimpse into my background, journey, and the principles that guide my work.
           </motion.p>
         </div>
@@ -61,7 +61,7 @@ export default function About() {
           {/* Left Content: Vertical Timeline */}
           <div className="relative order-2 lg:order-1 lg:pr-8">
             {/* Vertical Timeline Line */}
-            <div className="absolute left-4 lg:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+            <div className="absolute left-4 lg:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent"></div>
 
             <div className="space-y-10 relative">
               {aboutData.map((item) => (
@@ -74,20 +74,20 @@ export default function About() {
                   className="relative pl-12 lg:pl-16"
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-4 lg:left-6 w-8 h-8 rounded-full bg-[#0B0F19] border-2 border-white/20 flex items-center justify-center transform -translate-x-1/2 z-10">
-                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></div>
+                  <div className="absolute left-4 lg:left-6 w-8 h-8 rounded-full bg-background border-2 border-border flex items-center justify-center transform -translate-x-1/2 z-10 transition-colors">
+                    <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
                   </div>
 
                   {/* Content Card */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="glass-card p-6 md:p-8 hover:border-white/20 transition-all cursor-default"
+                    className="glass-card p-6 md:p-8 border border-transparent hover:border-border transition-all cursor-default"
                   >
                     <div className="flex items-center gap-4 mb-3">
                       <div className="p-2.5 glass rounded-xl inline-flex">{item.icon}</div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-white">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-semibold text-foreground">{item.title}</h3>
                     </div>
-                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                       {item.description}
                     </p>
                   </motion.div>
@@ -106,12 +106,12 @@ export default function About() {
           >
             <div className="relative w-full max-w-sm md:max-w-md aspect-[4/5] lg:aspect-square group">
               {/* Decorative background shapes */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 rounded-[2rem] transform rotate-6 scale-105 group-hover:rotate-3 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/20 to-green-500/20 rounded-[2rem] transform -rotate-3 scale-105 group-hover:-rotate-6 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/30 to-violet-500/30 rounded-[2rem] transform rotate-6 scale-105 group-hover:rotate-3 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-bl from-violet-500/20 to-amber-500/20 rounded-[2rem] transform -rotate-3 scale-105 group-hover:-rotate-6 transition-transform duration-500" />
 
-              <div className="absolute inset-0 bg-[#0B0F19] border border-white/10 rounded-[2rem] overflow-hidden glass-card z-10 flex items-center justify-center">
+              <div className="absolute inset-0 bg-background border border-border rounded-[2rem] overflow-hidden glass-card z-10 flex items-center justify-center transition-colors">
                 {/* Fallback Icon */}
-                <FaUser className="absolute text-7xl text-white/5 -z-10" />
+                <FaUser className="absolute text-7xl text-foreground/5 -z-10" />
 
                 <img
                   src="/profile.jpeg"

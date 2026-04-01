@@ -35,22 +35,22 @@ const skillCategories = [
     title: "Backend",
     skills: [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" />, level: 85 },
-      { name: "Express.js", icon: <SiExpress className="text-gray-300" />, level: 85 },
+      { name: "Express.js", icon: <SiExpress className="text-foreground opacity-70" />, level: 85 },
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" />, level: 85 },
-      { name: "REST APIs", icon: <SiNodedotjs className="text-gray-400" />, level: 90 },
+      { name: "REST APIs", icon: <SiNodedotjs className="text-muted-foreground" />, level: 90 },
       { name: "JWT", icon: <SiJsonwebtokens className="text-pink-500" />, level: 85 },
-      { name: "Socket.io", icon: <SiSocketdotio className="text-white" />, level: 80 },
+      { name: "Socket.io", icon: <SiSocketdotio className="text-foreground" />, level: 80 },
     ]
   },
   {
     title: "Tools/Platforms",
     skills: [
-      { name: "GitHub", icon: <SiGithub className="text-white" />, level: 90 },
+      { name: "GitHub", icon: <SiGithub className="text-foreground" />, level: 90 },
       { name: "Git", icon: <SiGit className="text-red-500" />, level: 90 },
       { name: "Netlify", icon: <SiNetlify className="text-teal-400" />, level: 85 },
-      { name: "Render", icon: <SiRender className="text-black" />, level: 85 },
+      { name: "Render", icon: <SiRender className="text-foreground p-1 bg-white rounded flex items-center" />, level: 85 },
       { name: "Postman", icon: <SiPostman className="text-orange-500" />, level: 90 },
-      { name: "Vercel", icon: <SiVercel className="text-white" />, level: 85 },
+      { name: "Vercel", icon: <SiVercel className="text-foreground" />, level: 85 },
     ]
   }
 ];
@@ -64,7 +64,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="heading-2 text-white mb-4"
+            className="heading-2 text-foreground mb-4"
           >
             Technical Arsenal
           </motion.h2>
@@ -73,7 +73,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-muted-foreground max-w-2xl mx-auto"
           >
             The tools, languages, and frameworks I use to bring ideas to life.
           </motion.p>
@@ -89,8 +89,8 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: catIndex * 0.1 }}
               className="glass p-8 rounded-3xl"
             >
-              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+              <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary"></span>
                 {category.title}
               </h3>
 
@@ -99,21 +99,21 @@ export default function Skills() {
                   <motion.div 
                     key={skill.name}
                     whileHover={{ y: -5, scale: 1.05 }}
-                    className="group relative flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all cursor-pointer"
+                    className="group relative flex flex-col items-center justify-center p-4 rounded-2xl bg-foreground/5 border border-border hover:border-primary/50 hover:bg-foreground/10 hover:shadow-[0_0_20px_rgba(251,146,60,0.15)] transition-all cursor-pointer"
                   >
-                    <div className="text-3xl md:text-4xl mb-3 drop-shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="text-3xl md:text-4xl mb-3 drop-shadow-md group-hover:drop-shadow-lg group-hover:scale-110 transition-transform">
                       {skill.icon}
                     </div>
-                    <span className="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white transition-colors text-center">
+                    <span className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
                       {skill.name}
                     </span>
 
-                    <div className="absolute bottom-0 left-0 h-1 bg-white/10 w-full rounded-b-2xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute bottom-0 left-0 h-1 bg-foreground/10 w-full rounded-b-2xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity">
                       <motion.div 
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                        className="h-full bg-gradient-to-r from-orange-500 to-violet-500"
                       />
                     </div>
                   </motion.div>

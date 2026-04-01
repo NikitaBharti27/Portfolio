@@ -28,7 +28,7 @@ const Grid = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     >
-                        <button className="px-6 py-2 bg-purple text-white/90 rounded-lg font-bold cursor-pointer hover:bg-black-100 border hover:border-purple transition-colors duration-300">
+                        <button className="px-6 py-2 bg-primary text-white/90 rounded-lg font-bold cursor-pointer hover:bg-black-100 border hover:border-primary transition-colors duration-300">
                             Download CV
                         </button>
                     </a>
@@ -45,7 +45,7 @@ const Grid = () => {
                 <CardContainer className="inter-var">
                     <CardBody className="relative group/card w-full max-w-[350px] aspect-[3/4] flex items-center justify-center">
                         {/* Decorative Blue Background Frame */}
-                        <div className="absolute inset-0 translate-x-6 translate-y-6 border-2 border-blue-500/50 rounded-xl z-0" />
+                        <div className="absolute inset-0 translate-x-6 translate-y-6 border-2 border-orange-500/50 rounded-xl z-0" />
 
                         <CardItem translateZ="100" className="w-full h-full relative z-10">
                             <img

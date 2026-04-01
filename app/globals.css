@@ -2,29 +2,70 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 1. Shadcn HSL Variables */
+/* 1. Theme Variables — Light (default) + Dark */
 @layer base {
   :root {
-    --background: 223 39% 7%; /* #0B0F19 */
-    --foreground: 220 32% 93%; /* #E6EAF2 */
-    --card: 223 39% 10%;
-    --card-foreground: 220 32% 93%;
-    --popover: 223 39% 7%;
-    --popover-foreground: 220 32% 93%;
-    --primary: 250 85% 70%; /* Soft Purple */
-    --primary-foreground: 220 32% 93%;
-    --secondary: 220 40% 15%;
-    --secondary-foreground: 220 32% 93%;
-    --muted: 220 40% 15%;
-    --muted-foreground: 220 20% 65%;
-    --accent: 250 85% 70%;
-    --accent-foreground: 220 32% 93%;
+    /* Light mode: warm blush pink */
+    --background: 350 40% 96%;      /* #FDF2F3 blush */
+    --foreground: 350 50% 15%;      /* #3B1116 mahogany */
+    --card: 350 30% 93%;
+    --card-foreground: 350 50% 15%;
+    --popover: 350 40% 96%;
+    --popover-foreground: 350 50% 15%;
+    --primary: 35 90% 50%;           /* amber (slightly deeper for light bg) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 20% 90%;
+    --secondary-foreground: 350 50% 15%;
+    --muted: 350 15% 88%;
+    --muted-foreground: 350 30% 35%;
+    --accent: 35 90% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 350 15% 82%;
+    --input: 350 15% 82%;
+    --ring: 35 90% 50%;
+    --radius: 1rem;
+
+    /* Semantic custom props for themed components */
+    --glass-bg: rgba(255, 235, 235, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-shadow: rgba(59, 17, 22, 0.06);
+    --glass-card-bg: rgba(255, 245, 245, 0.7);
+    --glow-opacity: 0.08;
+    --code-bg: rgba(59, 17, 22, 0.05);
+    --body-radial: rgba(251, 146, 60, 0.1);
+  }
+
+  .dark {
+    /* Dark mode: warm dark slate (Amber Dusk) */
+    --background: 25 30% 6%;        /* #0C0A07 */
+    --foreground: 35 25% 93%;       /* warm off-white */
+    --card: 25 30% 9%;
+    --card-foreground: 35 25% 93%;
+    --popover: 25 30% 6%;
+    --popover-foreground: 35 25% 93%;
+    --primary: 35 90% 60%;           /* Amber Orange */
+    --primary-foreground: 25 30% 6%;
+    --secondary: 35 25% 12%;
+    --secondary-foreground: 35 25% 93%;
+    --muted: 35 25% 12%;
+    --muted-foreground: 35 15% 65%;
+    --accent: 35 90% 60%;
+    --accent-foreground: 25 30% 6%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 250 85% 70%;
-    --radius: 1rem;
+    --border: 35 20% 20%;
+    --input: 35 20% 20%;
+    --ring: 35 90% 60%;
+
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
+    --glass-card-bg: rgba(12, 10, 7, 0.6);
+    --glow-opacity: 0.2;
+    --code-bg: rgba(255, 255, 255, 0.03);
+    --body-radial: rgba(80, 40, 10, 0.4);
   }
 }
 
@@ -80,8 +121,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Subtle background texture/gradient for depth */
-    background-image: radial-gradient(circle at top center, rgba(30, 40, 70, 0.4) 0%, transparent 60%);
+    background-image: radial-gradient(circle at top center, var(--body-radial) 0%, transparent 60%);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   button {
     @apply active:outline-none;
@@ -90,25 +131,50 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px var(--glass-shadow);
   }
   .glass-card {
-    @apply bg-[#0B0F19]/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-2xl;
+    background: var(--glass-card-bg);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
   }
   .glass-panel {
-    @apply bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md border border-white/10 rounded-2xl;
+    background: linear-gradient(to bottom right, var(--glass-bg), transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-violet-500;
   }
+
+  /* Themed text helpers */
+  .themed-heading {
+    color: hsl(var(--foreground));
+  }
+  .themed-subtext {
+    color: hsl(var(--muted-foreground));
+  }
+
   .heading-1 {
     @apply font-bold text-5xl md:text-7xl tracking-tight;
+    color: hsl(var(--foreground));
   }
   .heading-2 {
     @apply font-bold text-4xl md:text-5xl tracking-tight;
+    color: hsl(var(--foreground));
   }
   .heading-3 {
     @apply font-bold text-2xl md:text-3xl tracking-tight;
+    color: hsl(var(--foreground));
   }
 }
 

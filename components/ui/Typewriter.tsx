@@ -28,7 +28,7 @@ export function Typewriter({ words, delay = 3000, className }: TypewriterProps) 
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 font-semibold"
+          className="block bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-violet-500 font-semibold"
         >
           {words[index]}
         </motion.span>

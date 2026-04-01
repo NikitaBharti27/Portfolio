@@ -17,7 +17,7 @@ const ACHIEVEMENTS_DATA = [
     id: 2,
     title: "Coding Badges",
     date: "Multiple",
-    icon: <FaTrophy className="text-blue-400 text-3xl" />,
+    icon: <FaTrophy className="text-violet-400 text-3xl" />,
     description: "Earned multiple badges on LeetCode and HackerRank in C++ and other programming languages."
   }
 ];
@@ -31,7 +31,7 @@ export default function Achievements() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="heading-2 text-white mb-4"
+            className="heading-2 text-foreground mb-4"
           >
             Achievements
           </motion.h2>
@@ -40,7 +40,7 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-muted-foreground max-w-2xl mx-auto"
           >
             Milestones and competitive programming highlights.
           </motion.p>
@@ -55,19 +55,19 @@ export default function Achievements() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="glass-card p-8 h-full flex flex-col hover:border-white/20 hover:bg-white/5 transition-all">
+              <div className="glass-card p-8 h-full flex flex-col hover:border-border hover:bg-foreground/5 transition-all shadow-sm">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 shadow-inner">
+                  <div className="p-4 rounded-2xl bg-foreground/5 border border-border shadow-inner">
                     {achievement.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{achievement.title}</h3>
-                    <span className="text-sm text-purple-400 font-medium tracking-wide uppercase px-3 py-1 bg-purple-500/10 rounded-full border border-purple-500/20">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1">{achievement.title}</h3>
+                    <span className="text-sm text-primary font-medium tracking-wide uppercase px-3 py-1 bg-primary/10 rounded-full border border-primary/20 transition-colors">
                       {achievement.date}
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-400 leading-relaxed md:text-lg">
+                <p className="text-muted-foreground leading-relaxed md:text-lg">
                   {achievement.description}
                 </p>
               </div>

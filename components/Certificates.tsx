@@ -15,7 +15,7 @@ const CERTIFICATES_DATA = [
     description: "Comprehensive course on social network analysis, graph theory, and dynamics of networks.",
     image: "/Nptel.png",
     link: "#",
-    icon: <FaAward className="text-blue-400 text-3xl" />
+    icon: <FaAward className="text-violet-400 text-3xl" />
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const CERTIFICATES_DATA = [
     description: "Intensive training in MongoDB, Express.js, React, and Node.js for full-stack development.",
     image: "/mern.png",
     link: "#",
-    icon: <FaCertificate className="text-purple-400 text-3xl" />
+    icon: <FaCertificate className="text-orange-400 text-3xl" />
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ export default function Certificates() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="heading-2 text-white mb-4"
+            className="heading-2 text-foreground mb-4"
           >
             Certificates
           </motion.h2>
@@ -79,7 +79,7 @@ export default function Certificates() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-muted-foreground max-w-2xl mx-auto"
           >
             Professional milestones and skill validations from various platforms.
           </motion.p>
@@ -96,7 +96,7 @@ export default function Certificates() {
               className="group relative h-full flex flex-col"
             >
               <div 
-                className="glass-card flex flex-col h-full overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] border-white/5 hover:border-white/20 cursor-pointer"
+                className="glass-card flex flex-col h-full overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] border border-transparent hover:border-border cursor-pointer"
                 onClick={() => setSelectedCert(cert)}
               >
                 {/* Certificate Image */}
@@ -109,8 +109,8 @@ export default function Certificates() {
                     style={{ objectFit: 'cover' }}
                     className="transition-transform duration-700 group-hover:scale-110 filter brightness-90 group-hover:brightness-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 p-2 rounded-lg bg-black/50 backdrop-blur-md border border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent transition-colors"></div>
+                  <div className="absolute bottom-4 left-4 p-2 rounded-lg bg-background/50 backdrop-blur-md border border-border">
                     {cert.icon}
                   </div>
                 </div>
@@ -118,25 +118,25 @@ export default function Certificates() {
                 {/* Content */}
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex flex-col mb-4">
-                    <h3 className="text-2xl font-bold text-white mb-2 leading-tight group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-2xl font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors">
                       {cert.name}
                     </h3>
                     <div className="flex items-center justify-between">
-                      <p className="text-gray-400 font-medium">
+                      <p className="text-muted-foreground font-medium">
                         {cert.issuer}
                       </p>
-                      <span className="text-xs font-semibold uppercase tracking-widest text-gray-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 shrink-0">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground bg-foreground/5 px-2.5 py-1 rounded-full border border-border shrink-0">
                         {cert.date}
                       </span>
                     </div>
                   </div>
                   
-                  <p className="text-gray-400 mb-8 flex-grow text-sm leading-relaxed border-t border-white/5 pt-4">
+                  <p className="text-muted-foreground mb-8 flex-grow text-sm leading-relaxed border-t border-border/30 pt-4">
                     {cert.description}
                   </p>
 
                   <button 
-                    className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white text-sm font-semibold hover:from-blue-600/30 hover:to-purple-600/30 border border-white/10 hover:border-white/20 transition-all group-hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-primary/10 text-foreground text-sm font-semibold hover:bg-primary/20 border border-primary/20 hover:border-primary/40 transition-all active:scale-95 shadow-sm group-hover:shadow-primary/10"
                   >
                     View Certificate <FaExternalLinkAlt className="text-[10px]" />
                   </button>
@@ -154,7 +154,7 @@ export default function Certificates() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[6000] flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-md"
+            className="fixed inset-0 z-[6000] flex items-center justify-center p-4 md:p-8 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedCert(null)}
           >
             <motion.div
@@ -167,7 +167,7 @@ export default function Certificates() {
             >
               <button 
                 onClick={() => setSelectedCert(null)}
-                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all shadow-xl"
+                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-background/50 backdrop-blur-md border border-border flex items-center justify-center text-foreground hover:bg-foreground/10 transition-all shadow-xl active:scale-90"
               >
                 <FaTimes size={20} />
               </button>
@@ -183,10 +183,10 @@ export default function Certificates() {
                 />
               </div>
 
-              <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
-                <h3 className="text-3xl font-bold text-white mb-2">{selectedCert.name}</h3>
-                <p className="text-blue-400 font-medium mb-1">{selectedCert.issuer} • {selectedCert.date}</p>
-                <p className="text-gray-400 max-w-2xl">{selectedCert.description}</p>
+              <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-background via-background/60 to-transparent transition-colors">
+                <h3 className="text-3xl font-bold text-foreground mb-2">{selectedCert.name}</h3>
+                <p className="text-primary font-medium mb-1">{selectedCert.issuer} • {selectedCert.date}</p>
+                <p className="text-muted-foreground max-w-2xl">{selectedCert.description}</p>
               </div>
             </motion.div>
           </motion.div>
